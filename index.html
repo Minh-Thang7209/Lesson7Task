@@ -1,13 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /* 1 */
+        table {
+            table-layout: fixed;
+            width: 100%;
+            border: 3px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 20px;
+            border: 3px solid black;
+
+        }
+
+        /* 3 */
+        div {
+            background-color: blue;
+            width: 100px;
+            height: 25px;
+            border-radius: 2px;
+            text-align: center;
+        }
+
+        span {
+            color: white;
+        }
+    </style>
 </head>
+
 <body>
+    <!-- 1 -->
+    <table>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Company</th>
+        </tr>
+        <tr>
+            <td tabindex="0">Bill</td>
+            <td>Gates</td>
+            <td>Microsoft</td>
+        </tr>
+        <tr>
+            <td>Timothy</td>
+            <td>Cook</td>
+            <td>Apple</td>
+        </tr>
+        <tr>
+            <td>Larry</td>
+            <td>Page</td>
+            <td>Google</td>
+        </tr>
+        <tr>
+            <td id="td-1">Mark</td>
+            <td>Zukerberg</td>
+            <td>Facebook</td>
+        </tr>
+    </table>
+    <!-- 2 -->
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus atque quaerat, labore esse iste, accusamus,
+        exercitationem in libero est sed unde sunt rerum molestiae autem dolorum ipsam veritatis ex perferendis!</p>
+    <!-- 3 -->
+    <div>
+        <span>Like</span>
+    </div>
     <script>
-        
+        document.addEventListener("DOMContentLoaded", () => {
+            function ChangeColor(event) {
+                const td = document.querySelector('td');
+                td.style.backgroundColor =
+                td.style.backgroundColor === "black";
+            }
+            const changeColortable = document.querySelector('td');
+            changeColortable.addEventListener("click", ChangeColor);
+        });
+
     </script>
 </body>
+
 </html>
